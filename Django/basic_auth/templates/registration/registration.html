@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>Registration</h1>
+    <form method="post">
+        {% csrf_token %}
+<!--        {{ form.as_p }}-->
+        {{ form.username.label }}
+        {{ form.username }}
+        <br>
+        {{ form.password1.label }}
+        {{ form.password1 }}
+        <br>
+        {{ form.password2.label }}
+        {{ form.password2 }}
+        <br>
+        {{ form.is_staff.as_hidden }}
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    {% endblock content %}
+</body>
+</html>

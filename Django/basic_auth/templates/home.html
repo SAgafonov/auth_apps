@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BasicAuth</title>
+</head>
+<body>
+    <div>
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            {% if user.is_staff %}
+                <h1>SECRET</h1>
+            {% else %}
+                <p>You are not allowed to see a secret</p>
+            {% endif %}
+            <p><a href="{% url 'logout' %}">Log out</a></p>
+        {% else %}
+        <a href="{% url 'registration' %}">Registration</a> | <a href="{% url 'login' %}">Authorization</a>
+        {% endif %}
+    {% block content %}
+    {% endblock content %}
+    </div>
+</body>
+</html>

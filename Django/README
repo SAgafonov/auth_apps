@@ -1,0 +1,11 @@
+Made according to https://python-scripts.com/category/django-beginners
+
+To run:
+- Activate virtualenv
+- Install requirements if necessary
+- Run 'python3 manage.py migrate'
+- in CMD run 'python manage.py runserver'
+
+HowTo:
+By default 'is_staff' value is set to False. But it's possible to change it on registration form.
+Look for hidden field name="is_staff" and set value="True"
